@@ -12,7 +12,9 @@ MongoClient.connect(url,(err,client)=>{
   console.log("connected to MongoDB server");
   const db = client.db("TodoApp");
 
-  db.collection("Users").findOneAndUpdate({name:"Cameron"},{name:"Bob"});
+  db.collection("Users").findOneAndUpdate({name:"Cameron"},{name:"Bob"}).then((result)=>{
+    console.log(result);
+  });
 
 
   client.close();
