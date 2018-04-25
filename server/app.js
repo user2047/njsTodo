@@ -24,6 +24,14 @@ app.post("/todos",(req,res)=>{
 	})
 });
 
+app.get("/todos",(req,res)=>{
+	Todo.find().then((todos)=>{
+		res.send({todos});
+	},(error)=>{
+		console.log(error);
+	});
+}); 
+
 
 
 app.listen(3000, ()=>{
